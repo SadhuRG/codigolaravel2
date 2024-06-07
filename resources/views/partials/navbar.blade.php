@@ -3,51 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #ffffff;
-            padding: 15px 0;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-around;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .navbar div {
-            flex: 1;
-            text-align: center;
-        }
-        .navbar a {
-            color: #007bff;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-            transition: color 0.3s, text-decoration 0.3s;
-        }
-        .navbar .activo a {
-            color: red;
-            text-decoration: underline;
-        }
-        .navbar a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <div class="navbar">
-        <div class="{{ setActivo('home') }}"><a href="{{ route('home') }}">Home</a></div>
-        <div class="{{ setActivo('nosotros') }}"><a href="{{ route('nosotros') }}">Nosotros</a></div>
-        <div class="{{ setActivo('servicios') }}"><a href="{{ route('servicios') }}">Servicios</a></div>
-        <div class="{{ setActivo('contacto') }}"><a href="{{ route('contacto') }}">Contacto</a></div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ route('home') }}">HOMEWORK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item {{ setActivo('home') }}">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item {{ setActivo('nosotros') }}">
+                    <a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a>
+                </li>
+                <li class="nav-item {{ setActivo('servicios') }}">
+                    <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
+                </li>
+                <li class="nav-item {{ setActivo('contacto') }}">
+                    <a class="nav-link" href="{{ route('contacto') }}">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </body>
+
 </html>
